@@ -32,17 +32,17 @@ export function PageLoader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[10000] bg-nutri-green-deep text-nutri-cream flex flex-col items-center justify-between p-8 lg:p-16 select-none"
+          className="fixed inset-0 z-[10000] bg-gradient-to-br from-nutri-yellow via-nutri-yellow-bright to-nutri-orange text-nutri-dark flex flex-col items-center justify-between p-8 lg:p-16 select-none"
         >
           {/* Top Brand Tagline */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center space-x-3 text-xs uppercase tracking-[0.3em] text-nutri-amber font-semibold"
+            className="flex items-center space-x-3 text-xs uppercase tracking-[0.3em] text-nutri-dark font-extrabold"
           >
             <span>Suregrow Farms</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-nutri-amber" />
+            <span className="w-1.5 h-1.5 rounded-full bg-nutri-dark" />
             <span>Farming with Integrity</span>
           </motion.div>
 
@@ -58,45 +58,35 @@ export function PageLoader() {
                 src="/assets/logo.png"
                 alt="Nutrifresh Logo"
                 fill
-                className="object-contain filter brightness-110 drop-shadow-[0_10px_20px_rgba(232,141,20,0.2)]"
+                className="object-contain filter drop-shadow-xl"
                 priority
               />
             </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="font-serif text-lg lg:text-xl text-nutri-cream/80 italic font-light"
-            >
-              "Healthy Hens Lay Nutritious Eggs"
-            </motion.p>
-
             {/* Progress Bar Container */}
-            <div className="w-full space-y-3">
-              <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden relative">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-nutri-amber to-nutri-amber-light rounded-full"
-                  style={{ width: `${progress}%` }}
-                  transition={{ ease: "easeOut" }}
-                />
-              </div>
-              <div className="flex justify-between items-center text-xs tracking-widest text-nutri-cream/60 font-mono">
-                <span>PREMIUM FREE RANGE</span>
-                <span>{progress}%</span>
-              </div>
+            <div className="w-full bg-black/10 h-2 rounded-full overflow-hidden relative border border-black/10">
+              <motion.div
+                className="h-full bg-nutri-dark rounded-full"
+                style={{ width: `${Math.min(progress, 100)}%` }}
+                transition={{ ease: "easeOut" }}
+              />
+            </div>
+
+            {/* Counter Text */}
+            <div className="flex items-baseline space-x-2 font-serif text-3xl font-extrabold text-nutri-dark">
+              <span>{Math.min(progress, 100)}%</span>
             </div>
           </div>
 
-          {/* Bottom Footer Quote */}
-          <motion.div
+          {/* Bottom Footer Note */}
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            className="text-[11px] text-nutri-cream/50 tracking-wider font-light"
+            transition={{ delay: 0.4 }}
+            className="text-[11px] uppercase tracking-widest text-nutri-dark/80 font-bold"
           >
-            100 SQ. FT / BIRD RSPCA STANDARDS • 100% VEGETARIAN & HERBAL DIET
-          </motion.div>
+            100% Pasture-Raised Genuine Free Range Eggs
+          </motion.p>
         </motion.div>
       )}
     </AnimatePresence>

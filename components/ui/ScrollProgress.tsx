@@ -9,7 +9,7 @@ export function ScrollProgress() {
   return (
     <div className="fixed top-0 left-0 right-0 h-1 z-[100] pointer-events-none">
       <div
-        className="h-full bg-gradient-to-r from-nutri-amber via-nutri-amber-light to-nutri-green-soft shadow-[0_0_10px_#E88D14] transition-all duration-150 ease-out"
+        className="h-full bg-gradient-to-r from-nutri-yellow via-nutri-yellow-bright to-nutri-orange shadow-[0_0_10px_#FFC700] transition-all duration-150 ease-out"
         style={{ width: `${completion}%` }}
       />
     </div>

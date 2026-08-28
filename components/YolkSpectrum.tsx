@@ -68,7 +68,7 @@ export function YolkSpectrum() {
   const activeYolk = YOLK_LEVELS[selectedLevelIndex];
 
   return (
-    <div className="bg-nutri-green-deep text-nutri-cream rounded-3xl p-6 lg:p-12 border border-white/10 shadow-2xl space-y-8 relative overflow-hidden">
+    <div className="bg-nutri-dark text-white rounded-3xl p-6 lg:p-12 border-2 border-nutri-yellow shadow-2xl space-y-8 relative overflow-hidden">
       {/* Background Radial Glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-[120px] pointer-events-none transition-colors duration-700"
@@ -77,21 +77,21 @@ export function YolkSpectrum() {
 
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3 relative z-10">
-        <span className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-nutri-amber/20 text-nutri-amber text-xs font-bold uppercase tracking-widest">
-          <Sparkles className="w-4 h-4" />
+        <span className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-nutri-yellow text-nutri-dark text-xs font-black uppercase tracking-widest shadow-sm">
+          <Sparkles className="w-4 h-4 text-nutri-orange" />
           <span>INTERACTIVE YOLK SPECTRUM SELECTOR</span>
         </span>
-        <h2 className="font-serif text-3xl sm:text-5xl font-bold">
+        <h2 className="font-serif text-3xl sm:text-5xl font-extrabold text-white">
           The Yolk Color Tells The Whole Story
         </h2>
-        <p className="text-sm sm:text-base text-nutri-cream/80 font-light">
+        <p className="text-sm sm:text-base text-white/80 font-normal leading-relaxed">
           Click or slide across the yolk spectrum below to discover how hen lifestyle, open pasture foraging, and herbal diets directly transform yolk color and nutrition.
         </p>
       </div>
 
       {/* Spectrum Bar Selector */}
       <div className="max-w-3xl mx-auto space-y-4 relative z-10">
-        <div className="flex items-center justify-between text-xs font-bold text-nutri-cream/60 uppercase tracking-widest">
+        <div className="flex items-center justify-between text-xs font-bold text-white/70 uppercase tracking-widest">
           <span>Factory Caged Egg</span>
           <span>Nutrifresh Pasture-Raised</span>
         </div>
@@ -105,8 +105,8 @@ export function YolkSpectrum() {
                 onClick={() => setSelectedLevelIndex(idx)}
                 className={`py-3 px-2 rounded-xl transition-all duration-300 flex flex-col items-center space-y-2 relative ${
                   isSelected
-                    ? "bg-white text-nutri-dark shadow-xl scale-105 ring-2 ring-nutri-amber"
-                    : "hover:bg-white/10 text-nutri-cream"
+                    ? "bg-nutri-yellow text-nutri-dark shadow-xl scale-105 ring-2 ring-white"
+                    : "hover:bg-white/10 text-white"
                 }`}
               >
                 <div
@@ -114,7 +114,7 @@ export function YolkSpectrum() {
                   style={{ backgroundColor: item.colorHex }}
                 />
                 <span className="text-[11px] font-bold">Level {item.level}</span>
-                <span className="text-[9px] uppercase font-extrabold opacity-75 truncate max-w-full">
+                <span className="text-[9px] uppercase font-extrabold opacity-90 truncate max-w-full">
                   {item.name}
                 </span>
               </button>
@@ -136,7 +136,7 @@ export function YolkSpectrum() {
               initial={{ scale: 0.5, rotate: -20 }}
               animate={{ scale: 1, rotate: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full shadow-2xl border-4 border-white/60 flex items-center justify-center text-white font-bold font-serif text-lg"
+              className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full shadow-2xl border-4 border-white/60 flex items-center justify-center text-nutri-dark font-black font-serif text-lg"
               style={{ backgroundColor: activeYolk.colorHex }}
             >
               <div className="absolute top-2 left-3 w-6 h-3 bg-white/40 rounded-full blur-[1px]" />
@@ -146,10 +146,10 @@ export function YolkSpectrum() {
 
           <div className="space-y-1">
             <span
-              className={`inline-block text-[10px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full ${
+              className={`inline-block text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full ${
                 activeYolk.level >= 6
-                  ? "bg-nutri-amber text-nutri-green-deep"
-                  : "bg-white/20 text-nutri-cream"
+                  ? "bg-nutri-yellow text-nutri-dark"
+                  : "bg-white/20 text-white"
               }`}
             >
               {activeYolk.type}
@@ -160,35 +160,35 @@ export function YolkSpectrum() {
 
         {/* Right Facts & Nutrition Breakdown */}
         <div className="md:col-span-7 space-y-4">
-          <p className="text-xs sm:text-sm text-nutri-cream/90 leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">
             {activeYolk.description}
           </p>
 
           <div className="grid grid-cols-2 gap-4 pt-2 border-t border-white/10 text-xs">
             <div className="space-y-1">
-              <span className="text-[10px] uppercase font-bold text-nutri-amber tracking-wider">Beta-Carotene</span>
+              <span className="text-[10px] uppercase font-extrabold text-nutri-yellow tracking-wider">Beta-Carotene</span>
               <p className="font-serif text-lg font-bold text-white">{activeYolk.betaCarotene}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-[10px] uppercase font-bold text-nutri-amber tracking-wider">Vitamin E</span>
+              <span className="text-[10px] uppercase font-extrabold text-nutri-yellow tracking-wider">Vitamin E</span>
               <p className="font-serif text-lg font-bold text-white">{activeYolk.vitaminE}</p>
             </div>
           </div>
 
           <div className="space-y-2 pt-2 border-t border-white/10 text-xs">
             <div className="flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
               <div>
                 <strong className="text-white">Hen Diet: </strong>
-                <span className="text-nutri-cream/80">{activeYolk.henDiet}</span>
+                <span className="text-white/80">{activeYolk.henDiet}</span>
               </div>
             </div>
 
             <div className="flex items-start space-x-2">
-              <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
               <div>
                 <strong className="text-white">Hen Environment: </strong>
-                <span className="text-nutri-cream/80">{activeYolk.henLifestyle}</span>
+                <span className="text-white/80">{activeYolk.henLifestyle}</span>
               </div>
             </div>
           </div>
