@@ -54,22 +54,19 @@ export function CustomCursor() {
       animate={{
         x: position.x - (isHovered ? 28 : 10),
         y: position.y - (isHovered ? 28 : 10),
-        scale: isHovered ? 1.6 : 1,
+        scale: isHovered ? 1.5 : 1,
       }}
       transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.4 }}
     >
       <div
-        className={`rounded-full flex items-center justify-center transition-all duration-200 border-2 border-nutri-dark shadow-2xl ${
+        className={`rounded-full flex items-center justify-center transition-all duration-200 border-2 border-nutri-dark shadow-2xl pointer-events-none ${
           isHovered
             ? "w-14 h-14 bg-nutri-yellow text-nutri-dark text-[10px] font-black uppercase tracking-wider shadow-black/40 ring-4 ring-white/60"
             : "w-5 h-5 bg-nutri-yellow shadow-black/30 ring-2 ring-white/90"
         }`}
       >
-        {!isHovered && (
-          <div className="w-1.5 h-1.5 bg-nutri-dark rounded-full" />
-        )}
         {isHovered && cursorText && (
-          <span className="px-1 text-center leading-tight truncate">{cursorText}</span>
+          <span className="px-1 text-center leading-tight truncate pointer-events-none">{cursorText}</span>
         )}
       </div>
     </motion.div>

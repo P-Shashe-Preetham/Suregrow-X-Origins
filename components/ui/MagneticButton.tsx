@@ -17,8 +17,8 @@ export function MagneticButton({ children, className = "", onClick }: MagneticBu
     if (!ref.current) return;
     const { clientX, clientY } = e;
     const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (clientX - (left + width / 2)) * 0.35;
-    const y = (clientY - (top + height / 2)) * 0.35;
+    const x = (clientX - (left + width / 2)) * 0.2;
+    const y = (clientY - (top + height / 2)) * 0.2;
     setPosition({ x, y });
   };
 
@@ -27,16 +27,19 @@ export function MagneticButton({ children, className = "", onClick }: MagneticBu
   };
 
   return (
-    <motion.div
+    <div
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 350, damping: 20, mass: 0.5 }}
       onClick={onClick}
-      className={`inline-block ${className}`}
+      className={`inline-block relative ${className}`}
     >
-      {children}
-    </motion.div>
+      <motion.div
+        animate={{ x: position.x, y: position.y }}
+        transition={{ type: "spring", stiffness: 350, damping: 22, mass: 0.5 }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }
