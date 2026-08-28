@@ -41,10 +41,10 @@ export default function HomePage() {
 
   return (
     <div ref={containerRef} className="relative overflow-hidden bg-nutri-cream text-nutri-dark">
-      {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-gradient-to-b from-nutri-orange via-nutri-orange-bright to-nutri-orange-deep text-white">
-        {/* Background Radial Glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-nutri-yellow/25 rounded-full blur-[140px] pointer-events-none" />
+      {/* SECTION 1: HERO - CLEAN LUMINOUS EGG PALETTE */}
+      <section className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden bg-gradient-to-b from-nutri-yellow-pale via-nutri-cream to-white text-nutri-dark">
+        {/* Background Ambient Glow */}
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-nutri-yellow/20 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
@@ -53,19 +53,19 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/20 border border-white/30 text-nutri-yellow text-xs font-black uppercase tracking-widest shadow-md backdrop-blur-md"
+              className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-nutri-yellow/30 border border-nutri-yellow text-nutri-dark text-xs font-black uppercase tracking-widest shadow-sm"
             >
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 text-nutri-orange" />
               <span>SUREGROW FARMS • EST. 2015</span>
             </motion.div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-extrabold text-white leading-[1.08] tracking-tight">
+            <h1 className="font-serif text-4xl sm:text-6xl xl:text-7xl font-extrabold text-nutri-dark leading-[1.08] tracking-tight">
               Genuine Free Range Eggs. <br />
-              <span className="text-nutri-yellow italic drop-shadow-sm">Raised With Integrity.</span>
+              <span className="text-nutri-orange italic drop-shadow-sm">Raised With Integrity.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 max-w-2xl leading-relaxed font-normal">
-              Healthy hens lay nutritious eggs. Our pasture-raised hens roam freely across <strong className="text-nutri-yellow font-bold">100 sq. ft. per bird</strong> open fields, enjoying 100% vegetarian grain and 8 medicinal herbs with zero antibiotics.
+            <p className="text-base sm:text-lg text-nutri-dark/80 max-w-2xl leading-relaxed font-normal">
+              Healthy hens lay nutritious eggs. Our pasture-raised hens roam freely across <strong className="text-nutri-orange-deep font-bold">100 sq. ft. per bird</strong> open fields, enjoying 100% vegetarian grain and 8 medicinal herbs with zero antibiotics.
             </p>
 
             {/* CTAs */}
@@ -73,35 +73,35 @@ export default function HomePage() {
               <MagneticButton>
                 <Link
                   href="/eggs"
-                  className="bg-nutri-yellow hover:bg-nutri-yellow-bright text-nutri-dark font-extrabold px-8 py-4 rounded-full shadow-2xl shadow-nutri-yellow/40 hover:shadow-nutri-yellow/60 transition-all duration-300 transform hover:-translate-y-1 flex items-center space-x-3 text-sm uppercase tracking-wider"
+                  className="bg-nutri-orange hover:bg-nutri-orange-deep text-white font-extrabold px-8 py-4 rounded-full shadow-2xl shadow-nutri-orange/30 hover:shadow-nutri-orange/50 transition-all duration-300 transform hover:-translate-y-1 flex items-center space-x-3 text-sm uppercase tracking-wider"
                 >
                   <span>Explore Nutrifresh Eggs</span>
-                  <ArrowRight className="w-4 h-4 text-nutri-orange-deep" />
+                  <ArrowRight className="w-4 h-4 text-nutri-yellow" />
                 </Link>
               </MagneticButton>
 
               <Link
                 href="/store-locator"
-                className="bg-white/20 hover:bg-white/30 text-white border border-white/40 font-extrabold px-6 py-4 rounded-full transition-all duration-300 flex items-center space-x-2 text-sm uppercase tracking-wider backdrop-blur-md"
+                className="bg-white hover:bg-nutri-yellow-pale text-nutri-dark border-2 border-nutri-yellow font-extrabold px-6 py-4 rounded-full transition-all duration-300 flex items-center space-x-2 text-sm uppercase tracking-wider shadow-md"
               >
-                <MapPin className="w-4 h-4 text-nutri-yellow" />
+                <MapPin className="w-4 h-4 text-nutri-orange" />
                 <span>Find Retailers</span>
               </Link>
             </div>
 
             {/* Quick Stats Banner */}
-            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-white/20 text-white">
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-nutri-yellow/40 text-nutri-dark">
               <div>
-                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-yellow">100 Sq. Ft</p>
-                <p className="text-[11px] text-white/80 uppercase tracking-wider font-semibold">Pasture / Bird</p>
+                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-orange-deep">100 Sq. Ft</p>
+                <p className="text-[11px] text-nutri-dark/70 uppercase tracking-wider font-bold">Pasture / Bird</p>
               </div>
               <div>
-                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-yellow">100%</p>
-                <p className="text-[11px] text-white/80 uppercase tracking-wider font-semibold">Vegetarian & Herbs</p>
+                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-orange-deep">100%</p>
+                <p className="text-[11px] text-nutri-dark/70 uppercase tracking-wider font-bold">Vegetarian & Herbs</p>
               </div>
               <div>
-                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-yellow">0%</p>
-                <p className="text-[11px] text-white/80 uppercase tracking-wider font-semibold">Antibiotics / Steroids</p>
+                <p className="font-serif text-2xl lg:text-3xl font-black text-nutri-orange-deep">0%</p>
+                <p className="text-[11px] text-nutri-dark/70 uppercase tracking-wider font-bold">Antibiotics / Steroids</p>
               </div>
             </div>
           </div>
@@ -114,12 +114,12 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.2 }}
               className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[440px] lg:h-[440px]"
             >
-              <div className="absolute inset-0 bg-nutri-yellow/30 rounded-full blur-3xl animate-pulse-slow" />
+              <div className="absolute inset-0 bg-nutri-yellow/40 rounded-full blur-3xl animate-pulse-slow" />
               <Image
                 src="/assets/hero_egg.png"
                 alt="Nutrifresh Golden Yolk Egg"
                 fill
-                className="object-cover rounded-3xl shadow-2xl ring-4 ring-nutri-yellow/50"
+                className="object-cover rounded-3xl shadow-2xl ring-4 ring-nutri-yellow"
                 priority
               />
 
@@ -129,7 +129,7 @@ export default function HomePage() {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -bottom-6 -left-6 bg-white text-nutri-dark p-4 rounded-2xl border-2 border-nutri-yellow shadow-2xl flex items-center space-x-3"
               >
-                <div className="w-10 h-10 rounded-full bg-nutri-orange flex items-center justify-center text-white font-bold">
+                <div className="w-10 h-10 rounded-full bg-nutri-yellow flex items-center justify-center text-nutri-dark font-bold">
                   ✓
                 </div>
                 <div>
@@ -142,9 +142,9 @@ export default function HomePage() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center text-white/80 text-xs tracking-widest uppercase animate-bounce font-bold">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center text-nutri-dark/70 text-xs tracking-widest uppercase animate-bounce font-bold">
           <span>Scroll Down</span>
-          <ChevronDown className="w-4 h-4 text-nutri-yellow" />
+          <ChevronDown className="w-4 h-4 text-nutri-orange" />
         </div>
       </section>
 
@@ -248,20 +248,20 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 4: PINNED SCROLL TRIGGER — FARM TO TABLE JOURNEY */}
-      <section ref={pinnedSectionRef} className="h-screen bg-nutri-orange text-white flex items-center overflow-hidden relative">
-        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16">
+      <section ref={pinnedSectionRef} className="h-screen bg-nutri-yellow text-nutri-dark flex items-center overflow-hidden relative">
+        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16 bg-nutri-yellow-bright">
           <div className="max-w-4xl space-y-6 text-center">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-nutri-yellow">FARM TO TABLE • STEP 1</span>
-            <h2 className="font-serif text-4xl lg:text-6xl font-extrabold">1. The Lush Pasture Land</h2>
-            <p className="text-base lg:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
+            <span className="text-xs font-black uppercase tracking-[0.3em] bg-white text-nutri-orange-deep px-4 py-1.5 rounded-full shadow-md">FARM TO TABLE • STEP 1</span>
+            <h2 className="font-serif text-4xl lg:text-6xl font-extrabold text-nutri-dark">1. The Lush Pasture Land</h2>
+            <p className="text-base lg:text-lg text-nutri-dark/85 max-w-2xl mx-auto leading-relaxed font-medium">
               Located in pristine, unpolluted agricultural zones, Suregrow Farms provides 100 sq. ft per hen of rotational green pasture with natural shade trees and fresh air.
             </p>
           </div>
         </div>
 
-        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16 bg-nutri-orange-bright">
+        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16 bg-nutri-orange text-white">
           <div className="max-w-4xl space-y-6 text-center">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-nutri-yellow">FARM TO TABLE • STEP 2</span>
+            <span className="text-xs font-black uppercase tracking-[0.3em] bg-nutri-yellow text-nutri-dark px-4 py-1.5 rounded-full shadow-md">FARM TO TABLE • STEP 2</span>
             <h2 className="font-serif text-4xl lg:text-6xl font-extrabold">2. Natural Botanical Feed</h2>
             <p className="text-base lg:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Our hens forage for wild seeds, bugs, and insects while enjoying our in-house formulation of whole grains, Brahmi, Neem, Turmeric, Nilavembu, and Aloe Vera.
@@ -269,9 +269,9 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16 bg-nutri-orange-deep">
+        <div className="journey-step flex-shrink-0 w-screen h-full flex items-center justify-center p-8 lg:p-16 bg-nutri-orange-deep text-white">
           <div className="max-w-4xl space-y-6 text-center">
-            <span className="text-xs font-black uppercase tracking-[0.3em] text-nutri-yellow">FARM TO TABLE • STEP 3</span>
+            <span className="text-xs font-black uppercase tracking-[0.3em] bg-nutri-yellow text-nutri-dark px-4 py-1.5 rounded-full shadow-md">FARM TO TABLE • STEP 3</span>
             <h2 className="font-serif text-4xl lg:text-6xl font-extrabold">3. Fresh Daily Collection</h2>
             <p className="text-base lg:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Hens lay eggs in comfortable private nest boxes. Our farmers hand-collect eggs at regular intervals to maintain calm, clean, unwashed eggs preserving the natural protective bloom coating.
@@ -314,24 +314,24 @@ export default function HomePage() {
 
       {/* SECTION 6: STORE LOCATOR CTA BANNER */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-nutri-cream relative overflow-hidden">
-        <div className="max-w-7xl mx-auto bg-gradient-to-r from-nutri-orange via-nutri-orange-bright to-nutri-yellow text-white p-8 lg:p-16 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 border-4 border-nutri-yellow">
+        <div className="max-w-7xl mx-auto bg-gradient-to-r from-nutri-yellow via-nutri-yellow-bright to-nutri-orange text-nutri-dark p-8 lg:p-16 rounded-3xl shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 border-4 border-nutri-yellow">
           <div className="space-y-3 text-center lg:text-left">
-            <span className="text-xs font-black uppercase tracking-widest bg-white text-nutri-orange-deep px-3.5 py-1.5 rounded-full inline-block shadow-md">
+            <span className="text-xs font-black uppercase tracking-widest bg-nutri-dark text-white px-3.5 py-1.5 rounded-full inline-block shadow-md">
               Interactive Store Locator
             </span>
-            <h2 className="font-serif text-3xl lg:text-5xl font-extrabold text-white">
+            <h2 className="font-serif text-3xl lg:text-5xl font-extrabold text-nutri-dark">
               Find Nutrifresh Outlets Near You
             </h2>
-            <p className="text-white/90 text-sm lg:text-base max-w-xl font-medium">
+            <p className="text-nutri-dark/90 text-sm lg:text-base max-w-xl font-medium">
               Locate authorized organic supermarkets, gourmet stores, and direct farm pickup locations across Bengaluru, Hyderabad, and Mumbai.
             </p>
           </div>
 
           <Link
             href="/store-locator"
-            className="bg-white text-nutri-orange-deep font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-wider hover:bg-nutri-yellow hover:text-nutri-dark transition-all shadow-2xl flex items-center space-x-2"
+            className="bg-nutri-dark text-white font-extrabold px-8 py-4 rounded-full text-xs uppercase tracking-wider hover:bg-nutri-orange-deep transition-all shadow-2xl flex items-center space-x-2"
           >
-            <MapPin className="w-4 h-4 text-nutri-orange" />
+            <MapPin className="w-4 h-4 text-nutri-yellow" />
             <span>Launch Google Maps Finder</span>
           </Link>
         </div>

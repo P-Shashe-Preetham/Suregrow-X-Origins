@@ -56,8 +56,8 @@ export function Navigation() {
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-8 lg:px-12 py-3.5 backdrop-blur-xl border-b shadow-sm ${
           isScrolled
-            ? "bg-white/85 border-nutri-yellow/40 shadow-md"
-            : "bg-white/70 border-white/40"
+            ? "bg-white/90 border-nutri-yellow/50 shadow-md"
+            : "bg-white/75 border-white/40"
         }`}
       >
         <div className="w-full flex items-center justify-between relative">
@@ -68,13 +68,13 @@ export function Navigation() {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className={`p-3 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-md border group ${
                 isDropdownOpen
-                  ? "bg-white text-nutri-orange-deep border-white scale-105 shadow-2xl"
-                  : "bg-nutri-orange text-white border-nutri-orange-bright hover:bg-nutri-orange-bright"
+                  ? "bg-nutri-dark text-white border-nutri-dark scale-105 shadow-2xl"
+                  : "bg-nutri-orange text-white border-nutri-orange-bright hover:bg-nutri-orange-deep"
               }`}
               aria-label="Toggle Navigation Menu"
             >
               {isDropdownOpen ? (
-                <X className="w-6 h-6 text-nutri-orange-deep" />
+                <X className="w-6 h-6 text-nutri-yellow" />
               ) : (
                 /* 3 Horizontal Lines stacked on top of each other */
                 <div className="w-6 h-5 flex flex-col justify-between items-center py-0.5">
@@ -114,16 +114,16 @@ export function Navigation() {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ type: "spring", stiffness: 220, damping: 26 }}
-            className="fixed inset-0 z-50 h-screen w-screen bg-gradient-to-br from-nutri-orange via-nutri-orange-bright to-nutri-orange-deep text-white flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
+            className="fixed inset-0 z-50 h-screen w-screen bg-gradient-to-br from-nutri-yellow via-nutri-yellow-bright to-nutri-orange text-nutri-dark flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
           >
             {/* Top Bar inside Dropdown Curtain */}
-            <div className="w-full flex items-center justify-between pt-2 pb-6 border-b border-white/20 px-4 sm:px-8">
+            <div className="w-full flex items-center justify-between pt-2 pb-6 border-b border-nutri-dark/20 px-4 sm:px-8">
               <div className="flex items-center space-x-3">
-                <span className="px-3.5 py-1.5 rounded-full bg-nutri-yellow text-nutri-dark text-xs font-black uppercase tracking-widest flex items-center space-x-1.5 shadow-md">
-                  <Sparkles className="w-3.5 h-3.5" />
+                <span className="px-3.5 py-1.5 rounded-full bg-nutri-dark text-nutri-yellow text-xs font-black uppercase tracking-widest flex items-center space-x-1.5 shadow-md">
+                  <Sparkles className="w-3.5 h-3.5 text-nutri-orange" />
                   <span>SUREGROW FARMS</span>
                 </span>
-                <span className="hidden sm:inline-block text-xs font-bold text-white/80">
+                <span className="hidden sm:inline-block text-xs font-extrabold text-nutri-dark/80">
                   100% Pasture-Raised Genuine Free Range Eggs
                 </span>
               </div>
@@ -131,10 +131,10 @@ export function Navigation() {
               {/* Close Button */}
               <button
                 onClick={() => setIsDropdownOpen(false)}
-                className="bg-white hover:bg-nutri-yellow text-nutri-orange-deep hover:text-nutri-dark font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-2xl flex items-center space-x-2"
+                className="bg-nutri-dark hover:bg-nutri-orange-deep text-white font-extrabold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-2xl flex items-center space-x-2"
               >
                 <span>Close Menu</span>
-                <X className="w-4 h-4" />
+                <X className="w-4 h-4 text-nutri-yellow" />
               </button>
             </div>
 
@@ -156,21 +156,21 @@ export function Navigation() {
                         onClick={() => setIsDropdownOpen(false)}
                         className={`group flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl transition-all duration-300 ${
                           isActive
-                            ? "bg-white text-nutri-orange-deep shadow-2xl scale-[1.02]"
-                            : "hover:bg-white/10 text-white"
+                            ? "bg-nutri-dark text-white shadow-2xl scale-[1.02]"
+                            : "hover:bg-white/40 text-nutri-dark"
                         }`}
                       >
                         <div className="flex items-center space-x-4">
-                          <span className={`font-mono text-sm font-bold opacity-60 ${isActive ? "text-nutri-orange-deep" : "text-nutri-yellow"}`}>
+                          <span className={`font-mono text-sm font-black ${isActive ? "text-nutri-yellow" : "text-nutri-orange-deep"}`}>
                             0{idx + 1}.
                           </span>
                           <div>
                             <h2 className={`font-serif text-2xl sm:text-4xl font-extrabold tracking-tight transition-transform duration-300 group-hover:translate-x-2 ${
-                              isActive ? "text-nutri-orange-deep" : "group-hover:text-nutri-yellow"
+                              isActive ? "text-white" : "group-hover:text-nutri-orange-deep"
                             }`}>
                               {link.label}
                             </h2>
-                            <p className={`text-xs mt-0.5 ${isActive ? "text-nutri-dark/70 font-medium" : "text-white/70"}`}>
+                            <p className={`text-xs mt-0.5 font-medium ${isActive ? "text-white/80" : "text-nutri-dark/70"}`}>
                               {NAV_DESCRIPTIONS[link.href]}
                             </p>
                           </div>
@@ -178,8 +178,8 @@ export function Navigation() {
 
                         <ArrowRight className={`w-6 h-6 mt-2 sm:mt-0 transition-transform duration-300 ${
                           isActive
-                            ? "text-nutri-orange-deep opacity-100"
-                            : "text-nutri-yellow opacity-0 group-hover:opacity-100 group-hover:translate-x-2"
+                            ? "text-nutri-yellow opacity-100"
+                            : "text-nutri-orange-deep opacity-0 group-hover:opacity-100 group-hover:translate-x-2"
                         }`} />
                       </Link>
                     </motion.div>
@@ -189,17 +189,17 @@ export function Navigation() {
 
               {/* Right Column: Bright Brand Highlight Card */}
               <div className="lg:col-span-5 space-y-6">
-                <div className="bg-white text-nutri-dark rounded-3xl p-8 shadow-2xl space-y-6 border-4 border-nutri-yellow">
+                <div className="bg-white text-nutri-dark rounded-3xl p-8 shadow-2xl space-y-6 border-4 border-nutri-dark">
                   <div className="flex items-center space-x-3 text-nutri-orange-deep font-bold text-xs uppercase tracking-widest">
                     <ShieldCheck className="w-5 h-5 text-nutri-orange" />
                     <span>OUR GUARANTEE</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl font-bold text-nutri-dark">
+                  <h3 className="font-serif text-2xl font-extrabold text-nutri-dark">
                     Pasture Roaming & 8 Medicinal Herbs
                   </h3>
 
-                  <p className="text-xs text-nutri-dark/80 leading-relaxed font-light">
+                  <p className="text-xs text-nutri-dark/80 leading-relaxed font-normal">
                     Every Nutrifresh egg comes from hens provided 100 sq. ft per bird pasture space, fed whole grains with Brahmi, Neem, Turmeric, Nilavembu & Aloe Vera.
                   </p>
 
@@ -218,9 +218,9 @@ export function Navigation() {
             </div>
 
             {/* Bottom Footer inside Curtain */}
-            <div className="max-w-7xl mx-auto w-full pt-6 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between text-xs text-white/80 gap-4">
+            <div className="max-w-7xl mx-auto w-full pt-6 border-t border-nutri-dark/20 flex flex-col sm:flex-row items-center justify-between text-xs text-nutri-dark/80 gap-4 font-medium">
               <p>© {new Date().getFullYear()} Nutrifresh Eggs by Suregrow Farms Pvt. Ltd. All rights reserved.</p>
-              <div className="flex space-x-6 font-bold text-nutri-yellow">
+              <div className="flex space-x-6 font-bold text-nutri-dark">
                 <Link href="/about" onClick={() => setIsDropdownOpen(false)}>About Us</Link>
                 <Link href="/eggs" onClick={() => setIsDropdownOpen(false)}>Egg Science</Link>
                 <Link href="/become-a-farmer" onClick={() => setIsDropdownOpen(false)}>Farmer Network</Link>
