@@ -19,31 +19,31 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-nutri-green-deep text-nutri-cream relative overflow-hidden pt-20 pb-12 border-t border-white/10">
+    <footer className="bg-nutri-dark text-white relative overflow-hidden pt-20 pb-12 border-t-4 border-nutri-yellow">
       {/* Background Radial Glow */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-nutri-amber/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-nutri-orange/20 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Banner CTA: Store Locator & Farm Pickups */}
-        <div className="bg-gradient-to-r from-nutri-green-light to-nutri-green p-8 lg:p-12 rounded-3xl border border-white/15 shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-nutri-orange via-nutri-orange-bright to-nutri-orange-deep p-8 lg:p-12 rounded-3xl border-2 border-nutri-yellow shadow-2xl mb-16 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="space-y-3 text-center lg:text-left">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-nutri-amber/20 text-nutri-amber text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white text-nutri-orange-deep text-xs font-black uppercase tracking-wider shadow-md">
+              <Sparkles className="w-3.5 h-3.5 text-nutri-orange" />
               <span>Fresh Daily Stockists</span>
             </div>
-            <h3 className="font-serif text-2xl lg:text-4xl text-white font-bold leading-tight">
+            <h3 className="font-serif text-2xl lg:text-4xl text-white font-extrabold leading-tight">
               Looking for Genuine Free Range Eggs Nearby?
             </h3>
-            <p className="text-nutri-cream/80 text-sm lg:text-base max-w-2xl">
+            <p className="text-white/90 text-sm lg:text-base max-w-2xl font-medium">
               Locate authorized organic supermarkets, gourmet outlets, and direct Suregrow farm hubs across major cities.
             </p>
           </div>
 
           <Link
             href="/store-locator"
-            className="flex-shrink-0 bg-gradient-to-r from-nutri-amber to-nutri-amber-dark text-nutri-green-deep font-bold px-8 py-4 rounded-full hover:shadow-xl hover:shadow-nutri-amber/30 transition-all duration-300 transform hover:-translate-y-1 flex items-center space-x-3 text-sm uppercase tracking-wider"
+            className="flex-shrink-0 bg-nutri-yellow hover:bg-nutri-yellow-bright text-nutri-dark font-extrabold px-8 py-4 rounded-full hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center space-x-3 text-sm uppercase tracking-wider shadow-xl"
           >
-            <MapPin className="w-5 h-5" />
+            <MapPin className="w-5 h-5 text-nutri-orange-deep" />
             <span>Launch Store Locator</span>
           </Link>
         </div>
@@ -60,12 +60,12 @@ export function Footer() {
                 className="object-contain filter brightness-110"
               />
             </div>
-            <p className="text-nutri-cream/70 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/80 text-sm leading-relaxed max-w-sm font-normal">
               Nutrifresh Premium Quality Free Range Eggs are produced by Suregrow Farms Pvt. Ltd. (Est. 2015). Raised on 100 sq. ft. per bird pastures with clean air, herbal diet, and zero antibiotics.
             </p>
             <div className="flex items-center space-x-4 pt-2">
-              <div className="flex items-center space-x-2 text-xs text-nutri-amber font-semibold">
-                <ShieldCheck className="w-4 h-4" />
+              <div className="flex items-center space-x-2 text-xs text-nutri-yellow font-bold">
+                <ShieldCheck className="w-4 h-4 text-nutri-orange" />
                 <span>RSPCA Standards (100 Sq Ft / Bird)</span>
               </div>
             </div>
@@ -73,10 +73,10 @@ export function Footer() {
 
           {/* Col 2: Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-nutri-amber font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-nutri-yellow font-black">
               Explore Pages
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-sm font-medium">
               {[
                 { label: "Home", href: "/" },
                 { label: "Nutrifresh Eggs", href: "/eggs" },
@@ -89,9 +89,9 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-nutri-cream/70 hover:text-nutri-amber transition-colors flex items-center space-x-1.5"
+                    className="text-white/80 hover:text-nutri-yellow transition-colors flex items-center space-x-1.5"
                   >
-                    <span className="text-nutri-amber/40">›</span>
+                    <span className="text-nutri-yellow/60">›</span>
                     <span>{item.label}</span>
                   </Link>
                 </li>
@@ -101,28 +101,28 @@ export function Footer() {
 
           {/* Col 3: Brand USPs & Facts */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-nutri-amber font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-nutri-yellow font-black">
               Nutrifresh Guarantee
             </h4>
-            <ul className="space-y-2.5 text-xs text-nutri-cream/75">
+            <ul className="space-y-2.5 text-xs text-white/80 font-medium">
               <li className="flex items-start space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
                 <span>100% Vegetarian & Herbal Diet (8 Botanicals)</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
                 <span>0 Antibiotics, Growth Hormones or Steroids</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
                 <span>Unwashed Shell preserving natural Bloom Coating</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
                 <span>Upright Rich Golden Orange Yolks</span>
               </li>
               <li className="flex items-start space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-nutri-amber mt-0.5 flex-shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-nutri-yellow mt-0.5 flex-shrink-0" />
                 <span>No De-Beaking & Ethical Hen Protection</span>
               </li>
             </ul>
@@ -130,10 +130,10 @@ export function Footer() {
 
           {/* Col 4: Newsletter */}
           <div className="space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-nutri-amber font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-nutri-yellow font-black">
               Join Our Farm Journal
             </h4>
-            <p className="text-xs text-nutri-cream/70 leading-relaxed">
+            <p className="text-xs text-white/80 leading-relaxed font-normal">
               Subscribe for organic farm insights, herbal nutrition studies, and fresh stock alerts.
             </p>
             <form onSubmit={handleSubmit} className="space-y-2">
@@ -144,17 +144,17 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full bg-white/10 border border-white/20 rounded-full px-4 py-2.5 text-xs text-white placeholder-white/40 focus:outline-none focus:border-nutri-amber transition-colors"
+                  className="w-full bg-white/10 border border-white/20 rounded-full px-4 py-2.5 text-xs text-white placeholder-white/50 focus:outline-none focus:border-nutri-yellow transition-colors"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 bottom-1 bg-nutri-amber text-nutri-green-deep px-3 rounded-full hover:bg-nutri-amber-light transition-colors flex items-center justify-center"
+                  className="absolute right-1 top-1 bottom-1 bg-nutri-yellow text-nutri-dark px-3.5 rounded-full hover:bg-nutri-yellow-bright transition-colors flex items-center justify-center font-bold"
                 >
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-nutri-orange-deep" />
                 </button>
               </div>
               {subscribed && (
-                <p className="text-[11px] text-nutri-amber font-medium">
+                <p className="text-[11px] text-nutri-yellow font-bold">
                   ✓ Thank you for subscribing to Nutrifresh!
                 </p>
               )}
@@ -163,14 +163,14 @@ export function Footer() {
         </div>
 
         {/* Bottom Credits & Copyright */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-nutri-cream/50">
+        <div className="pt-8 border-t border-white/15 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/60 font-medium">
           <div>
             © {new Date().getFullYear()} SUREGROW FARMS Pvt. Ltd. — Farming with Integrity. All rights reserved.
           </div>
           <div className="flex items-center space-x-6">
-            <Link href="/eggs" className="hover:text-nutri-amber transition-colors">Egg Quality Promise</Link>
-            <Link href="/farms" className="hover:text-nutri-amber transition-colors">Pasture Standards</Link>
-            <Link href="/store-locator" className="hover:text-nutri-amber transition-colors">Find Retail Outlets</Link>
+            <Link href="/eggs" className="hover:text-nutri-yellow transition-colors">Egg Quality Promise</Link>
+            <Link href="/farms" className="hover:text-nutri-yellow transition-colors">Pasture Standards</Link>
+            <Link href="/store-locator" className="hover:text-nutri-yellow transition-colors">Find Retail Outlets</Link>
           </div>
         </div>
       </div>

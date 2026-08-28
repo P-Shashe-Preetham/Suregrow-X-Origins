@@ -10,29 +10,43 @@ const config: Config = {
     extend: {
       colors: {
         nutri: {
-          green: {
-            DEFAULT: "#1B3B2B",
-            deep: "#11261B",
-            light: "#2D5A40",
-            sage: "#4A7C59",
-            soft: "#88AB75",
+          orange: {
+            DEFAULT: "#FF7000",
+            bright: "#FF8800",
+            deep: "#E65100",
+            vibrant: "#FF5500",
+            soft: "#FFA040",
+          },
+          yellow: {
+            DEFAULT: "#FFC700",
+            bright: "#FFD600",
+            warm: "#F59E0B",
+            soft: "#FEF08A",
+            pale: "#FFFBEB",
           },
           amber: {
-            DEFAULT: "#E88D14",
-            light: "#F4A261",
-            dark: "#D97706",
-            glow: "#FFB703",
+            DEFAULT: "#FF7000",
+            light: "#FF9800",
+            dark: "#E65100",
+            glow: "#FFD600",
           },
           cream: {
-            DEFAULT: "#FCF8F2",
-            warm: "#F5EFE6",
-            card: "#F9F5EE",
-            dark: "#EFE6D8",
+            DEFAULT: "#FFFDF7",
+            warm: "#FFF9EE",
+            card: "#FFFFFF",
+            dark: "#FDE68A",
+          },
+          green: {
+            DEFAULT: "#15803D",
+            deep: "#166534",
+            light: "#22C55E",
+            sage: "#86EFAC",
+            soft: "#DCFCE7",
           },
           dark: {
-            DEFAULT: "#1A1D1A",
-            card: "#242825",
-            muted: "#3A3F3B",
+            DEFAULT: "#18181B",
+            card: "#27272A",
+            muted: "#52525B",
           }
         }
       },

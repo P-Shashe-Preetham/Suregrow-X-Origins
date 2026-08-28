@@ -7,16 +7,16 @@
 :root {
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', Inter, sans-serif;
-  --bg-cream: #FCF8F2;
-  --text-dark: #1A1D1A;
-  --green-primary: #1B3B2B;
-  --amber-primary: #E88D14;
+  --bg-cream: #FFFDF7;
+  --text-dark: #18181B;
+  --orange-primary: #FF7000;
+  --yellow-primary: #FFC700;
 }
 
 html {
   scroll-behavior: auto !important;
-  background-color: #FCF8F2;
-  color: #1A1D1A;
+  background-color: #FFFDF7;
+  color: #18181B;
   font-family: var(--font-sans);
 }
 
@@ -46,19 +46,19 @@ html.lenis, html.lenis body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #11261B;
+  background: #FFF9EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #E88D14;
+  background: #FF7000;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F4A261;
+  background: #FF8800;
 }
 
 /* Text Selection */
 ::selection {
-  background-color: #E88D14;
+  background-color: #FF7000;
   color: #FFFFFF;
 }
 
@@ -80,35 +80,35 @@ body {
 
 /* Utility Glassmorphism & Cards */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 200, 0, 0.3);
 }
 
 .glass-panel-dark {
-  background: rgba(27, 59, 43, 0.85);
+  background: rgba(255, 112, 0, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .text-gradient-amber {
-  background: linear-gradient(135deg, #F4A261 0%, #E88D14 50%, #D97706 100%);
+  background: linear-gradient(135deg, #FFC700 0%, #FF7000 60%, #E65100 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-green {
-  background: linear-gradient(135deg, #2D5A40 0%, #1B3B2B 100%);
+.text-gradient-orange {
+  background: linear-gradient(135deg, #FF9100 0%, #FF5500 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(232, 141, 20, 0.15) 0%, rgba(27, 59, 43, 0) 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(255, 199, 0, 0.25) 0%, rgba(255, 253, 247, 0) 70%);
 }
 
-.bg-radial-green-glow {
-  background: radial-gradient(circle at 50% 30%, rgba(45, 90, 64, 0.25) 0%, rgba(253, 248, 242, 0) 70%);
+.bg-radial-orange-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(255, 112, 0, 0.2) 0%, rgba(255, 253, 247, 0) 70%);
 }
