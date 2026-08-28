@@ -49,29 +49,29 @@ export function CustomCursor() {
   if (!isVisible) return null;
 
   return (
-    <>
-
-      <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] hidden lg:block"
-        animate={{
-          x: position.x - (isHovered ? 28 : 8),
-          y: position.y - (isHovered ? 28 : 8),
-          scale: isHovered ? 1.8 : 1,
-        }}
-        transition={{ type: "spring", stiffness: 450, damping: 28, mass: 0.5 }}
+    <motion.div
+      className="fixed top-0 left-0 pointer-events-none z-[99999] hidden lg:block"
+      animate={{
+        x: position.x - (isHovered ? 28 : 10),
+        y: position.y - (isHovered ? 28 : 10),
+        scale: isHovered ? 1.6 : 1,
+      }}
+      transition={{ type: "spring", stiffness: 500, damping: 28, mass: 0.4 }}
+    >
+      <div
+        className={`rounded-full flex items-center justify-center transition-all duration-200 border-2 border-nutri-dark shadow-2xl ${
+          isHovered
+            ? "w-14 h-14 bg-nutri-yellow text-nutri-dark text-[10px] font-black uppercase tracking-wider shadow-black/40 ring-4 ring-white/60"
+            : "w-5 h-5 bg-nutri-yellow shadow-black/30 ring-2 ring-white/90"
+        }`}
       >
-        <div
-          className={`rounded-full flex items-center justify-center transition-all duration-300 ${
-            isHovered
-              ? "w-14 h-14 bg-nutri-amber/80 backdrop-blur-sm text-nutri-green-deep text-[10px] font-bold uppercase tracking-wider shadow-lg shadow-nutri-amber/30"
-              : "w-4 h-4 bg-nutri-amber shadow-md shadow-nutri-amber/40 ring-2 ring-nutri-amber/30"
-          }`}
-        >
-          {isHovered && cursorText && (
-            <span className="px-1 text-center leading-tight truncate">{cursorText}</span>
-          )}
-        </div>
-      </motion.div>
-    </>
+        {!isHovered && (
+          <div className="w-1.5 h-1.5 bg-nutri-dark rounded-full" />
+        )}
+        {isHovered && cursorText && (
+          <span className="px-1 text-center leading-tight truncate">{cursorText}</span>
+        )}
+      </div>
+    </motion.div>
   );
 }
