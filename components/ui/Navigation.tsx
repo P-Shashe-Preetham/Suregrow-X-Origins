@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, X, Menu, Sparkles, ArrowRight, Home, Egg, Trees, HeartHandshake, Info, BookOpen, ShieldCheck } from "lucide-react";
+import { MapPin, X, Sparkles, ArrowRight, ShieldCheck } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
 
 const NAV_DESCRIPTIONS: Record<string, string> = {
@@ -54,53 +54,51 @@ export function Navigation() {
     <>
       {/* HEADER BAR */}
       <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="relative flex items-center space-x-3 group z-50">
-            <div className="relative w-36 sm:w-44 h-12 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src="/assets/logo.png"
-                alt="Nutrifresh Logo"
-                fill
-                className="object-contain object-left filter drop-shadow-md"
-                priority
-              />
-            </div>
-          </Link>
-
-          {/* Right Header Buttons */}
-          <div className="flex items-center space-x-3 z-50">
-            {/* Quick Store Locator CTA */}
-            <Link
-              href="/store-locator"
-              className="hidden sm:inline-flex items-center space-x-2 bg-nutri-yellow hover:bg-nutri-yellow-bright text-nutri-dark font-extrabold px-5 py-3 rounded-full text-xs uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-            >
-              <MapPin className="w-4 h-4 text-nutri-orange-deep" />
-              <span>Find Stores</span>
-            </Link>
-
-            {/* Menu Dropdown Toggle Button */}
+        <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+          
+          {/* FAR LEFT: 3 HORIZONTAL LINES HAMBURGER MENU BUTTON */}
+          <div className="flex items-center z-50">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`px-6 py-3 rounded-full font-extrabold text-xs uppercase tracking-wider transition-all duration-300 flex items-center space-x-2.5 shadow-xl border ${
+              className={`p-3 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-xl border backdrop-blur-md group ${
                 isDropdownOpen
-                  ? "bg-white text-nutri-orange-deep border-white shadow-2xl scale-105"
+                  ? "bg-white text-nutri-orange-deep border-white scale-105 shadow-2xl"
                   : isScrolled
                   ? "bg-nutri-orange text-white border-nutri-orange-bright hover:bg-nutri-orange-bright"
-                  : "bg-nutri-orange/95 text-white border-white/30 hover:bg-nutri-orange"
+                  : "bg-nutri-orange/90 text-white border-white/30 hover:bg-nutri-orange"
               }`}
-              aria-label="Toggle Full Page Menu"
+              aria-label="Toggle Navigation Menu"
             >
-              <span>{isDropdownOpen ? "Close" : "Menu"}</span>
-              <motion.div animate={{ rotate: isDropdownOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
-                {isDropdownOpen ? (
-                  <X className="w-4 h-4 text-nutri-orange-deep" />
-                ) : (
-                  <Menu className="w-4 h-4 text-nutri-yellow" />
-                )}
-              </motion.div>
+              {isDropdownOpen ? (
+                <X className="w-6 h-6 text-nutri-orange-deep" />
+              ) : (
+                /* 3 Horizontal Lines stacked on top of each other */
+                <div className="w-6 h-5 flex flex-col justify-between items-center py-0.5">
+                  <span className="w-6 h-0.5 bg-nutri-yellow rounded-full transition-transform group-hover:scale-x-110" />
+                  <span className="w-6 h-0.5 bg-white rounded-full transition-transform group-hover:scale-x-110" />
+                  <span className="w-6 h-0.5 bg-nutri-yellow rounded-full transition-transform group-hover:scale-x-110" />
+                </div>
+              )}
             </button>
           </div>
+
+          {/* MIDDLE: CENTERED BRAND LOGO */}
+          <div className="absolute left-1/2 -translate-x-1/2 z-50">
+            <Link href="/" className="relative block group">
+              <div className="relative w-40 sm:w-48 h-12 transition-transform duration-300 group-hover:scale-105">
+                <Image
+                  src="/assets/logo.png"
+                  alt="Nutrifresh Logo"
+                  fill
+                  className="object-contain filter drop-shadow-md"
+                  priority
+                />
+              </div>
+            </Link>
+          </div>
+
+          {/* FAR RIGHT: BALANCING PLACEHOLDER (Store locator removed as requested) */}
+          <div className="w-12 h-12 pointer-events-none" />
         </div>
       </header>
 
