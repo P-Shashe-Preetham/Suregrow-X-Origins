@@ -52,17 +52,17 @@ export function Navigation() {
 
   return (
     <>
-      {/* TRANSLUCENT HEADER BAR */}
+      {/* TRANSLUCENT HEADER BAR - FULL VIEWPORT WIDTH */}
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-3.5 backdrop-blur-xl border-b shadow-sm ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-8 lg:px-12 py-3.5 backdrop-blur-xl border-b shadow-sm ${
           isScrolled
             ? "bg-white/85 border-nutri-yellow/40 shadow-md"
             : "bg-white/70 border-white/40"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between relative">
+        <div className="w-full flex items-center justify-between relative">
           
-          {/* FAR LEFT: 3 HORIZONTAL LINES HAMBURGER MENU BUTTON */}
+          {/* FAR SIDE LEFT: 3 HORIZONTAL LINES HAMBURGER MENU BUTTON */}
           <div className="flex items-center z-50">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -86,7 +86,7 @@ export function Navigation() {
             </button>
           </div>
 
-          {/* MIDDLE: CENTERED BRAND LOGO */}
+          {/* MIDDLE: DEAD CENTERED BRAND LOGO */}
           <div className="absolute left-1/2 -translate-x-1/2 z-50">
             <Link href="/" className="relative block group">
               <div className="relative w-40 sm:w-48 h-12 transition-transform duration-300 group-hover:scale-105">
@@ -101,7 +101,7 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* FAR RIGHT: BALANCING PLACEHOLDER (Store locator removed as requested) */}
+          {/* FAR RIGHT: BALANCING PLACEHOLDER */}
           <div className="w-12 h-12 pointer-events-none" />
         </div>
       </header>
@@ -117,7 +117,7 @@ export function Navigation() {
             className="fixed inset-0 z-50 h-screen w-screen bg-gradient-to-br from-nutri-orange via-nutri-orange-bright to-nutri-orange-deep text-white flex flex-col justify-between p-6 sm:p-12 overflow-y-auto"
           >
             {/* Top Bar inside Dropdown Curtain */}
-            <div className="max-w-7xl mx-auto w-full flex items-center justify-between pt-2 pb-6 border-b border-white/20">
+            <div className="w-full flex items-center justify-between pt-2 pb-6 border-b border-white/20 px-4 sm:px-8">
               <div className="flex items-center space-x-3">
                 <span className="px-3.5 py-1.5 rounded-full bg-nutri-yellow text-nutri-dark text-xs font-black uppercase tracking-widest flex items-center space-x-1.5 shadow-md">
                   <Sparkles className="w-3.5 h-3.5" />
