@@ -1,3 +1,18 @@
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
+  { label: "Home", href: "/" },
+  { label: "Nutrifresh Eggs", href: "/eggs" },
+  { label: "Nutrifresh Farms", href: "/farms" },
+  { label: "Become a Farmer", href: "/become-a-farmer" },
+  { label: "About Us", href: "/about" },
+  { label: "The Journal", href: "/blog" },
+  { label: "Store Locator", href: "/store-locator" },
+];
+
 export interface Product {
   id: string;
   name: string;

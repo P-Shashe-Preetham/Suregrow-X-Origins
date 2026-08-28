@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, ArrowRight, ShieldCheck, HeartHandshake } from "lucide-react";
-import { NAV_LINKS } from "./Navigation";
+import { NAV_LINKS } from "@/lib/constants";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -36,7 +36,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
             </p>
             {NAV_LINKS.map((link, idx) => {
               const isActive = pathname === link.href;
-              const Icon = link.icon;
               return (
                 <motion.div
                   key={link.href}
@@ -52,7 +51,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      {Icon && <Icon className="w-5 h-5 text-nutri-amber" />}
                       <span>{link.label}</span>
                     </div>
                     <ArrowRight className="w-5 h-5 text-nutri-amber/60" />
