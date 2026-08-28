@@ -52,20 +52,24 @@ export function Navigation() {
 
   return (
     <>
-      {/* HEADER BAR */}
-      <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-4">
+      {/* TRANSLUCENT HEADER BAR */}
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-3.5 backdrop-blur-xl border-b shadow-sm ${
+          isScrolled
+            ? "bg-white/85 border-nutri-yellow/40 shadow-md"
+            : "bg-white/70 border-white/40"
+        }`}
+      >
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
           
           {/* FAR LEFT: 3 HORIZONTAL LINES HAMBURGER MENU BUTTON */}
           <div className="flex items-center z-50">
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`p-3 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-xl border backdrop-blur-md group ${
+              className={`p-3 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-md border group ${
                 isDropdownOpen
                   ? "bg-white text-nutri-orange-deep border-white scale-105 shadow-2xl"
-                  : isScrolled
-                  ? "bg-nutri-orange text-white border-nutri-orange-bright hover:bg-nutri-orange-bright"
-                  : "bg-nutri-orange/90 text-white border-white/30 hover:bg-nutri-orange"
+                  : "bg-nutri-orange text-white border-nutri-orange-bright hover:bg-nutri-orange-bright"
               }`}
               aria-label="Toggle Navigation Menu"
             >

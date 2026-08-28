@@ -51,8 +51,9 @@ const config: Config = {
         }
       },
       fontFamily: {
-        display: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Plus Jakarta Sans", "Inter", "sans-serif"],
+        display: ["Outfit", "Plus Jakarta Sans", "sans-serif"],
+        serif: ["Outfit", "Plus Jakarta Sans", "sans-serif"],
+        sans: ["Outfit", "Plus Jakarta Sans", "sans-serif"],
         handwriting: ["Caveat", "cursive"]
       },
       keyframes: {

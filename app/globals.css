@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', Inter, sans-serif;
+  --font-serif: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', sans-serif;
   --bg-cream: #FFFDF7;
   --text-dark: #18181B;
   --orange-primary: #FF7000;
@@ -58,57 +59,37 @@ html.lenis, html.lenis body {
 
 /* Text Selection */
 ::selection {
-  background-color: #FF7000;
-  color: #FFFFFF;
+  background-color: #FFC700;
+  color: #18181B;
 }
 
-/* Custom Cursor Defaults */
-body {
-  cursor: default;
-  overflow-x: hidden;
-}
-
-@media (min-width: 1024px) {
-  .custom-cursor-active a,
-  .custom-cursor-active button,
-  .custom-cursor-active [role="button"],
-  .custom-cursor-active input,
-  .custom-cursor-active textarea {
-    cursor: pointer;
-  }
-}
-
-/* Utility Glassmorphism & Cards */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 200, 0, 0.3);
-}
-
-.glass-panel-dark {
-  background: rgba(255, 112, 0, 0.95);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
+/* Custom Utility Classes */
 .text-gradient-amber {
-  background: linear-gradient(135deg, #FFC700 0%, #FF7000 60%, #E65100 100%);
+  background: linear-gradient(135deg, #FF7000 0%, #FFC700 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-orange {
-  background: linear-gradient(135deg, #FF9100 0%, #FF5500 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.bg-amber-glow {
+  background: radial-gradient(circle at center, rgba(255, 199, 0, 0.25) 0%, rgba(255, 112, 0, 0) 70%);
 }
 
-.bg-radial-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(255, 199, 0, 0.25) 0%, rgba(255, 253, 247, 0) 70%);
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 199, 0, 0.3);
 }
 
-.bg-radial-orange-glow {
-  background: radial-gradient(circle at 50% 30%, rgba(255, 112, 0, 0.2) 0%, rgba(255, 253, 247, 0) 70%);
+/* Smooth Image Reveal Styles */
+.image-reveal-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (min-width: 1024px) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
 }
